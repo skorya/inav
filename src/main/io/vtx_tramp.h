@@ -26,7 +26,7 @@
 #define VTX_TRAMP_5G8_MAX_POWER_COUNT   5
 #define VTX_TRAMP_5G8_DEFAULT_POWER     1
 
-#define VTX_TRAMP_5G8_MIN_FREQUENCY_MHZ 5000             //min freq in MHz
+#define VTX_TRAMP_5G8_MIN_FREQUENCY_MHZ 4900             //min freq in MHz
 #define VTX_TRAMP_5G8_MAX_FREQUENCY_MHZ 5999             //max freq in MHz
 
 // 1.3 GHz
