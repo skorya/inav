@@ -227,6 +227,7 @@ static vtxProtoResponseType_e vtxProtoProcessResponse(void)
         case 0x72:
             vtxState.capabilities.freqMin = vtxState.recvPkt[2] | (vtxState.recvPkt[3] << 8);
             vtxState.capabilities.freqMax = vtxState.recvPkt[4] | (vtxState.recvPkt[5] << 8);
+            vtxState.capabilities.freqMin = 4500;
             vtxState.capabilities.powerMax = vtxState.recvPkt[6] | (vtxState.recvPkt[7] << 8);
 
             if (vtxState.capabilities.freqMin != 0 && vtxState.capabilities.freqMin < vtxState.capabilities.freqMax) {
@@ -414,9 +415,9 @@ static void impl_SetBandAndChannel(vtxDevice_t * vtxDevice, uint8_t band, uint8_
         newFreqMhz = vtx1G3_Bandchan2Freq(band, channel);
     }
 
-    if (newFreqMhz < vtxState.capabilities.freqMin || newFreqMhz > vtxState.capabilities.freqMax) {
-        return;
-    }
+    // if (newFreqMhz < vtxState.capabilities.freqMin || newFreqMhz > vtxState.capabilities.freqMax) {
+    //    return;
+    // }
 
     // Cache band and channel
     vtxState.request.band = band;
