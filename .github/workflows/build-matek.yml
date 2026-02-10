@@ -14,13 +14,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y gcc-arm-none-eabi ruby ninja-build cmake
-
       - name: Build
         run: |
           mkdir build && cd build
           cmake -G Ninja -DTARGET=MATEKH743 ..
           ninja MATEKH743
-
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
